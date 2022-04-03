@@ -13,6 +13,15 @@
     \nYou should ask someone else about fishing, though.\n\n</string>
     <string name="what_is_your_nickname">What is your nickname</string>
     <string name="Done">Done</string>
+    <string name="box_two">Box Two</string>
+    <string name="box_one">Box One</string>
+    <string name="box_three">Box Three</string>
+    <string name="box_fourth">Box fourth</string>
+    <string name="Box_five">Box Five</string>
+    <string name="how_to_play">How to play</string>
+    <string name="button_red">Red</string>
+    <string name="button_yellow">Yellow</string>
+    <string name="button_green">Green</string>
 
 
 </resources>

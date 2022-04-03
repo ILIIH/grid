@@ -1,46 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Name_surname_style">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">@dimen/small_margin</item>
-        <item name="android:fontFamily">@font/roboto</item>
-        <item name="android:gravity">center_horizontal</item>
-        <item name="android:padding">@dimen/smal_padding</item>
-        <item name="android:textSize">@dimen/text_size</item>
-    </style>
-
-    <style name="star_style">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">16dp</item>
-    </style>
-
-    <style name="about_me_style">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:padding">16dp</item>
-        <item name="android:lineSpacingMultiplier">1.2</item>
-        <item name="android:textSize">20dp</item>
-    </style>
-
-    <style name="Name_field">
-        <item name="android:background">@color/colorAccent</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:ems">10</item>
-        <item name="android:inputType">textPersonName</item>
-        <item name="android:minHeight">48dp</item>
-        <item name="android:textAlignment">center</item>
-    </style>
-
-    <style name="NameStyle">NameStyle</style>
-
-    <style name="donBtn">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:fontFamily">@font/roboto</item>
-    </style>
 </resources>

@@ -3,6 +3,7 @@ package com.example.studyapp
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -23,28 +24,36 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun clickHandlerFunction(view: View) {
-        val Entered_text = findViewById<EditText>(R.id.editTextTextPersonName)
-        val nicknameTextView = findViewById<TextView>(R.id.nickname_text)
-        nicknameTextView.text = Entered_text.text
-        Entered_text.visibility = View.GONE
-        nicknameTextView.visibility = View.VISIBLE
-        val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+
+
+    fun makeColored(view: View) {
+
+        val boxOneText = findViewById<TextView>(R.id.box_one_text)
+        val boxTwoText = findViewById<TextView>(R.id.box_two_text)
+        val boxThreeText = findViewById<TextView>(R.id.box_three_text)
+        val boxFourText = findViewById<TextView>(R.id.box_four_text)
+        val boxFiveText = findViewById<TextView>(R.id.box_five_text)
+
+
+        when (view.id) {
+
+            R.id.box_one_text -> view.setBackgroundColor(Color.DKGRAY)
+            R.id.box_two_text -> view.setBackgroundColor(Color.GRAY)
+            R.id.box_three_text -> view.setBackgroundColor(Color.BLUE)
+            R.id.box_four_text -> view.setBackgroundColor(Color.MAGENTA)
+            R.id.box_five_text -> view.setBackgroundColor(Color.BLUE)
+
+            R.id.red_button -> boxThreeText.setBackgroundResource(R.color.purple_500)
+            R.id.yellow_button -> boxFourText.setBackgroundResource(R.color.teal_700)
+            R.id.green_button -> boxFiveText.setBackgroundResource(R.color.colorAccent)
+
+            else -> view.setBackgroundColor(Color.LTGRAY)
+
+
+        }
     }
 
-    fun updateNickname(view: View) {
-        val editText = findViewById<EditText>(R.id.editTextTextPersonName)
-        val doneButton = findViewById<Button>(R.id.done)
 
-        editText.visibility = View.VISIBLE
-        doneButton.visibility = View.VISIBLE
-        view.visibility = View.GONE
-
-        editText.requestFocus()
-        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.showSoftInput(editText, 0)
-    }
 
 
 }

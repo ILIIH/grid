@@ -74,7 +74,7 @@ class GameFragment : Fragment() {
         // Shuffles the questions and sets the question index to the first question.
         randomizeQuestions()
 
-        // Bind this fragment class to the layout
+
         binding.game = this
 
         // Set the onClickListener for the submitButton
@@ -101,12 +101,14 @@ class GameFragment : Fragment() {
                     } else {
                         // We've won!  Navigate to the gameWonFragment.
                         view.findNavController()
-                                .navigate(R.id.action_gameFragment_to_gameWonFragment)
+                            .navigate(GameFragmentDirections
+                                .actionGameFragmentToGameWonFragment(numQuestions, questionIndex))
+
                     }
                 } else {
                     // Game over! A wrong answer sends us to the gameOverFragment.
                     view.findNavController()
-                            .navigate(R.id.action_gameFragment_to_gameOverFragment)
+                            .navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
                 }
             }
         }
@@ -129,5 +131,8 @@ class GameFragment : Fragment() {
         // and shuffle them
         answers.shuffle()
         (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_android_trivia_question, questionIndex + 1, numQuestions)
+
+
+
     }
 }

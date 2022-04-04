@@ -26,15 +26,8 @@ import androidx.navigation.ui.NavigationUI
 import com.example.android.navigation.databinding.FragmentTitleBinding
 
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- *
- */
+
 class TitleFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +37,12 @@ class TitleFragment : Fragment() {
 
         binding.playButton.setOnClickListener { view : View ->
             view.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
+        }
+        binding.about.setOnClickListener{ view : View ->
+            view.findNavController().navigate(R.id.action_titleFragment_to_aboutFragment)
+        }
+        binding.rulles.setOnClickListener{ view : View ->
+            view.findNavController().navigate(R.id.action_titleFragment_to_rulesFragment)
         }
         setHasOptionsMenu(true)
         return binding.root
@@ -56,7 +55,7 @@ class TitleFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item,view!!.findNavController())
+        return NavigationUI.onNavDestinationSelected(item,requireView().findNavController())
                 ||super.onOptionsItemSelected(item)
     }
 

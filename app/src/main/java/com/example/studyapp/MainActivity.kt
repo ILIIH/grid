@@ -13,37 +13,52 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.databinding.DataBindingUtil
+import com.example.studyapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+
+    private lateinit var binding: ActivityMainBinding
+    private val myName: MyName = MyName("Illia Branchuk")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+        binding.myName = myName
     }
 
     fun clickHandlerFunction(view: View) {
-        val Entered_text = findViewById<EditText>(R.id.editTextTextPersonName)
-        val nicknameTextView = findViewById<TextView>(R.id.nickname_text)
-        nicknameTextView.text = Entered_text.text
-        Entered_text.visibility = View.GONE
-        nicknameTextView.visibility = View.VISIBLE
+        binding.apply {
+
+            myName.nickname = editTextTextPersonName.text.toString()
+            editTextTextPersonName.visibility = View.GONE
+            nicknameText.visibility = View.VISIBLE
+
+            invalidateAll()
+
+        }
+
         val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
     fun updateNickname(view: View) {
-        val editText = findViewById<EditText>(R.id.editTextTextPersonName)
-        val doneButton = findViewById<Button>(R.id.done)
 
-        editText.visibility = View.VISIBLE
-        doneButton.visibility = View.VISIBLE
-        view.visibility = View.GONE
+        binding.apply {
+            editTextTextPersonName.visibility = View.VISIBLE
+            done.visibility = View.VISIBLE
+            view.visibility = View.GONE
+            editTextTextPersonName.requestFocus()
 
-        editText.requestFocus()
-        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.showSoftInput(editText, 0)
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.showSoftInput(editTextTextPersonName, 0)
+        }
+
+
     }
 
 

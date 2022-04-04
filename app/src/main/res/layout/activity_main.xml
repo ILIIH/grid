@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout>
+
+    <data>
+        <variable
+            name="myName"
+            type="com.example.studyapp.MyName" />
+
+    </data>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,7 +21,7 @@
 
     <TextView
         android:id="@+id/textView"
-        android:text="@string/Name_Surname"
+        android:text="@={myName.name}"
         style="@style/Name_surname_style" />
 
     <ImageView
@@ -67,3 +77,4 @@
 
 
 </LinearLayout>
+</layout>

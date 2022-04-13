@@ -1,48 +1,52 @@
 public class Test {
     public static void main(String[] args) {
         int maxSize = 100;
-        HighArray arr;
+// Размер массива
+        ArrayBub arr;
 // Ссылка на массив
-        arr = new HighArray(maxSize); // Создание массива
+        arr = new ArrayBub(maxSize); // Создание массива
         arr.insert(77);
         arr.insert(99);
+// Вставка 10 элементов
         arr.insert(44);
         arr.insert(55);
         arr.insert(22);
         arr.insert(88);
         arr.insert(11);
-        arr.insert(11);
-        arr.insert(11);
-        arr.insert(11);
         arr.insert(00);
         arr.insert(66);
-        arr.insert(33); // Вставка 10 элементов
-        arr.display(); // Вывод элементов
-        int searchKey = 35;
-// Поиск элемента
-        if( arr.find(searchKey) )
-            System.out.println("Found " + searchKey);
-        else
-            System.out.println("Can't find " + searchKey);
-        arr.delete(00);
-        arr.delete(55);
-        arr.delete(99);
-// Удаление трех элементов
-
-        System.out.println("Max " + arr.getMax());
-        System.out.println("Max removed " + arr.removeMax());
+        arr.insert(33);
+        arr.display();
+// Вывод элементов
+        arr.EvenOddSort();
+// Пузырьковая сортировка элементов
         arr.display();
 
-        // Сортировка
-        HighArray Sortedarr =  new HighArray(maxSize);
-        while(arr.getMax()!=-1){
-            Sortedarr.insert(arr.removeMax());
-        }
-        System.out.println("Sorted ");
-        Sortedarr.display();
+        System.out.println("///////////////////////////////");
 
-        System.out.println("No doubt ");
-        Sortedarr.noDups();
-        Sortedarr.display();
+        int maxSize2 = 100;
+// Размер массива
+        ArrayIns arr2;
+// Ссылка на массив
+        arr2 = new ArrayIns(maxSize); // Создание массива
+        arr2.insert(16);
+        arr2.insert(15);
+        arr2.insert(14);
+        arr2.insert(11);
+        arr2.insert(10);
+        arr2.insert(9);
+        arr2.insert(2);
+        arr2.insert(2);
+        arr2.insert(7);
+        arr2.insert(5);
+        arr2.insert(3);
+
+// Вставка 10 элементов
+
+        arr2.display(); // Вывод элементов
+        arr2.insertionSort(); // Сортировка методом вставки
+        arr2.display();
+        arr2.median();
+// Вставка 10 элементов
     }
 }

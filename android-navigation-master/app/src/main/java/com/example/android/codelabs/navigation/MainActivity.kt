@@ -32,9 +32,7 @@ import androidx.navigation.ui.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
-/**
- * A simple activity demonstrating use of a NavHostFragment with a navigation drawer.
- */
+
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration : AppBarConfiguration
 
@@ -66,17 +64,6 @@ class MainActivity : AppCompatActivity() {
 
         setupBottomNavMenu(navController)
 
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            val dest: String = try {
-                resources.getResourceName(destination.id)
-            } catch (e: Resources.NotFoundException) {
-                Integer.toString(destination.id)
-            }
-
-            Toast.makeText(this@MainActivity, "Navigated to $dest",
-                    Toast.LENGTH_SHORT).show()
-            Log.d("NavigationActivity", "Navigated to $dest")
-        }
     }
 
     private fun setupBottomNavMenu(navController: NavController) {
@@ -115,5 +102,5 @@ class MainActivity : AppCompatActivity() {
    override fun onSupportNavigateUp(): Boolean {
         return findNavController(R.id.my_nav_host_fragment).navigateUp(appBarConfiguration)
     }
-    // TODO END STEP 9.7
+
 }

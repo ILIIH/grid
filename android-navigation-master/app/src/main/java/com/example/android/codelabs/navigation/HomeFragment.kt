@@ -48,10 +48,12 @@ class HomeFragment : Fragment() {
            findNavController().navigate(R.id.flow_step_one_dest, null)
        }
 
+        // ЧТо єто
+
       val options = navOptions {
            anim {
               enter = R.anim.slide_in_right
-             exit = R.anim.slide_out_left
+              exit = R.anim.slide_out_left
               popEnter = R.anim.slide_in_left
                popExit = R.anim.slide_out_right
            }

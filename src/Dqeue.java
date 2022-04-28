@@ -1,5 +1,4 @@
 
-
 public class Dqeue {
     private int maxSize;
     private long[] queArray;
@@ -14,7 +13,7 @@ public class Dqeue {
     }
 
     public void insertLeft(int item){
-        if(rear == maxSize-1)
+        if(rear == maxSize-2)
             rear = -1;
         queArray[++rear] = item;
 
@@ -32,9 +31,23 @@ public class Dqeue {
         if(nItems<maxSize)nItems++;
     }
 
+    private boolean isEmpty(){
+        if(nItems==0)return true;
+        else return false;
+    }
+
+    private boolean isFull(){
+        if(nItems==maxSize)return true;
+        else return false;
+    }
+
     public void show(){
         for(int i = 0;i<nItems;i++){
             System.out.println(queArray[i]);
         }
+    }
+
+    public void show( int i ){
+            System.out.println(queArray[i]);
     }
 }

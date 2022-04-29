@@ -2,7 +2,7 @@
 public class Dqeue {
     private int maxSize;
     private long[] queArray;
-    private int rear = -1;
+    private int left = -1;
     private int right ;
     private int nItems;
 
@@ -13,9 +13,9 @@ public class Dqeue {
     }
 
     public void insertLeft(int item){
-        if(rear == maxSize-2)
-            rear = -1;
-        queArray[++rear] = item;
+        if(left == maxSize-2)
+            left = -1;
+        queArray[++left] = item;
 
         if(nItems<maxSize)nItems++;
     }
@@ -26,7 +26,7 @@ public class Dqeue {
             queArray[right] = item;
             right--;
         }
-        else queArray[++rear] = item;
+        else queArray[++left] = item;
 
         if(nItems<maxSize)nItems++;
     }

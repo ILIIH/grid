@@ -28,9 +28,9 @@ public class Stack {
       return  Array[nItems];
     }
     void put(long item){
-        if(isOverload()&&rear==nItems) {
-            rear = 0;
-            Array[rear] = item;
+
+        if(isOverload()&&rear>-1) {
+            Array[rear--] = item;
         }
         else {
             Array[++ rear ]= item;

@@ -55,7 +55,7 @@ class Queue
 //--------------------------------------------------------------
 
     public void show(){
-        for(int i = 0;i<nItems;i++){
+        for(int i = front;i<nItems;i++){
             System.out.println(queArray[i]);
         }
     }

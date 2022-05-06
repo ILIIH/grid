@@ -1,46 +1,40 @@
 public class Test {
     public static void main(String[] args) {
-        Queue theQueue = new Queue(3); // Очередь из 5 ячеек
 
-        theQueue.insert(1);
-        theQueue.insert(2);
-        theQueue.insert(3);
+        ListedPriorityQueue PQ = new ListedPriorityQueue();
+        PQ.incert(11);
+        PQ.incert(2);
+        PQ.incert(4);
+        PQ.incert(121);
+        PQ.incert(1000);
+        PQ.incert(19);
 
-        theQueue.insert(4);
+        PQ.show();
 
 
-        theQueue.show();
-        System.out.println("--------------------------------------");
-        Dqeue theDueue = new Dqeue(4); // Очередь из 5 ячеек
+        CycledList CL = new CycledList();
+        CL.incert(1);
+        CL.incert(2);
+        CL.incert(3);
+        CL.incert(4);
+        CL.incert(5);
+        CL.incert(6);
 
-        theDueue.insertLeft(1);
-        theDueue.insertLeft(2);
-        theDueue.insertRight(3);
 
-        theDueue.insertRight(4);
-        theDueue.insertLeft(5);
+        System.out.println();
+        System.out.println ("////////////////////////////////");  ;
+        System.out.println(  CL.peak(7));  ;
 
-        theDueue.show();
 
-        System.out.println("--------------------------------------");
-        Stack stack = new Stack(3);
-        stack.put(1);
-        stack.put(2);
-        stack.put(3);
-        stack.put(4);
-        stack.put(5);
+        System.out.println ("////////////////////////////////");  ;
 
-        stack.show();
+        Matrix m1 = new Matrix(2,2);
+        m1.get(0,0).dData=100L;
+        m1.get(0,1).dData=200L;
+        m1.get(1,0).dData=1488L;
+        m1.get(1,1).dData=200L  ;
 
-        System.out.println("--------------------------------------");
-
-        PriorityQ thePQ = new PriorityQ(5);
-        thePQ.insert(30);
-        thePQ.insert(50);
-        thePQ.insert(10);
-        thePQ.insert(40);
-        thePQ.insert(20);
-        thePQ.show();
+        m1.show();
 
     }
 }

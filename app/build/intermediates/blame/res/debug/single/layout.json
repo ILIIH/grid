@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/illia/Учёба_андроид/GridProjects/Week5/DevBytes-starter/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/devbyte_item.xml",
+        "source": "/home/illia/Учёба_андроид/GridProjects/Week5/DevBytes-starter/app/src/main/res/layout/devbyte_item.xml"
+    },
+    {
+        "merged": "/home/illia/Учёба_андроид/GridProjects/Week5/DevBytes-starter/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_dev_byte.xml",
+        "source": "/home/illia/Учёба_андроид/GridProjects/Week5/DevBytes-starter/app/src/main/res/layout/fragment_dev_byte.xml"
+    }
+]

@@ -1,40 +1,17 @@
 public class Test {
     public static void main(String[] args) {
 
-        ListedPriorityQueue PQ = new ListedPriorityQueue();
-        PQ.incert(11);
-        PQ.incert(2);
-        PQ.incert(4);
-        PQ.incert(121);
-        PQ.incert(1000);
-        PQ.incert(19);
+        System.out.println(Multiplayer.mult(2,3));
+        int lenght = 16 ;
+        BreanchPrinter.printTree(lenght,lenght/2);
+        System.out.println(pow(2,4));
 
-        PQ.show();
+        Backpack bp = new Backpack();
+        bp.CollectBackpack(6,0);
+    }
 
-
-        CycledList CL = new CycledList();
-        CL.incert(1);
-        CL.incert(2);
-        CL.incert(3);
-        CL.incert(4);
-        CL.incert(5);
-        CL.incert(6);
-
-
-        System.out.println();
-        System.out.println ("////////////////////////////////");  ;
-        System.out.println(  CL.peak(7));  ;
-
-
-        System.out.println ("////////////////////////////////");  ;
-
-        Matrix m1 = new Matrix(2,2);
-        m1.get(0,0).dData=100L;
-        m1.get(0,1).dData=200L;
-        m1.get(1,0).dData=1488L;
-        m1.get(1,1).dData=200L  ;
-
-        m1.show();
-
+    public static int pow(int n1, int n2){
+        if(n2==1)return n1;
+        else  return  n1 * pow (n1,n2-1);
     }
 }

@@ -29,6 +29,7 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val view = ActivityProfileBinding.inflate(layoutInflater)
+
         setContentView(view.root)
     }
 }

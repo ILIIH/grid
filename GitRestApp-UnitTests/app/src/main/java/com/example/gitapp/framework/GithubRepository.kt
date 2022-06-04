@@ -13,6 +13,7 @@ import com.example.core.domain.helpers.ErrorEntity
 import com.example.core.domain.helpers.Result
 import com.example.gitapp.framework.network.GithubService
 import com.example.gitapp.util.asUserDomain
+import io.reactivex.Flowable
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
@@ -60,13 +61,9 @@ open class GithubRepository @Inject constructor(
 
     // ////////////////////////////////////////////////////////
 
-    private var _repo = MutableLiveData<PagingData<Repo>>()
-    val repo: LiveData<PagingData<Repo>>
-        get() = _repo
+    override fun getRepository(UserName: String): Flowable<PagingData<Repo>> {
 
-    override fun getRepository(UserName: String) {
-
-        val disposiable = Pager(
+        return Pager(
             config = PagingConfig(
                 pageSize = 3,
                 enablePlaceholders = false,
@@ -74,10 +71,5 @@ open class GithubRepository @Inject constructor(
             ),
             pagingSourceFactory = { RepositoryPageSourse(gitServise, UserName) }
         ).flowable
-            .subscribe {
-                _repo.value = it
-            }
-
-        disposiables.add(disposiable)
     }
 }

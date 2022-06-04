@@ -48,6 +48,7 @@ dependencies {
 
 
     implementation "com.google.dagger:dagger:2.40.5"
+    implementation 'androidx.test.espresso:espresso-contrib:3.4.0'
     kapt "com.google.dagger:dagger-compiler:2.40.5"
 
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
@@ -77,4 +78,11 @@ dependencies {
     androidTestImplementation "io.mockk:mockk-android:1.12.4"
 
     kaptAndroidTest 'androidx.databinding:databinding-compiler:3.3.2'
+
+    androidTestImplementation "io.mockk:mockk-android:1.9.3"
+
+
+    debugImplementation "androidx.fragment:fragment-testing:1.4.1"
+    implementation "androidx.fragment:fragment:1.4.1"
+
 }

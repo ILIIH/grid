@@ -1,27 +1,31 @@
 package com.example.profile.profile.profileFragment
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.paging.PagingData
 import com.example.core.domain.Repo
 import com.example.core.domain.User
 import com.example.gitapp.framework.GithubRepository
+import com.example.gitapp.util.BaseViewModel
 import javax.inject.Inject
 
-class ProfileViewModel @Inject constructor(private val Repository: GithubRepository) : ViewModel() {
+class ProfileViewModel @Inject constructor(private val Repository: GithubRepository) :
+    BaseViewModel() {
     
     private var _user = MutableLiveData<User>()
 
-    val repo: LiveData<PagingData<Repo>> = Repository.repo
+    private var _repo = MutableLiveData<PagingData<Repo>>()
+    val repo: LiveData<PagingData<Repo>>
+        get() = _repo
 
+    @SuppressLint("CheckResult")
     fun setsUser(current_user: User) {
         _user.postValue(current_user)
-        Repository.getRepository(current_user.login)
+        val dispose = Repository.getRepository(current_user.login).subscribe {
+            _repo.value = it
+        }
+        addDisposable { dispose }
     }
 
-    override fun onCleared() {
-        super.onCleared()
-        Repository.disposiables.clear()
-    }
 }

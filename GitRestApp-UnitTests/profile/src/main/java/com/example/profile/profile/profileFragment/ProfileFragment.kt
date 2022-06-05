@@ -18,6 +18,7 @@ import com.example.core.domain.User
 import com.example.profile.R
 import com.example.profile.databinding.FragmentProfileBinding
 import com.example.profile.profile.ProfileActivity
+import javax.inject.Inject
 
 class ProfileFragment : Fragment() {
 

@@ -13,7 +13,7 @@ import javax.inject.Inject
 class ProfileViewModel @Inject constructor(private val Repository: GithubRepository) :
     BaseViewModel() {
     
-    private var _user = MutableLiveData<User>()
+    var user = MutableLiveData<User>()
 
     private var _repo = MutableLiveData<PagingData<Repo>>()
     val repo: LiveData<PagingData<Repo>>
@@ -21,7 +21,7 @@ class ProfileViewModel @Inject constructor(private val Repository: GithubReposit
 
     @SuppressLint("CheckResult")
     fun setsUser(current_user: User) {
-        _user.postValue(current_user)
+        user.postValue(current_user)
         val dispose = Repository.getRepository(current_user.login).subscribe {
             _repo.value = it
         }

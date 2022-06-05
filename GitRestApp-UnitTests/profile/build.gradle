@@ -33,6 +33,12 @@ android {
         viewBinding true
         dataBinding true
     }
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+        }
+    }
+
 }
 
 dependencies {
@@ -49,6 +55,7 @@ dependencies {
 
     implementation "com.google.dagger:dagger:2.40.5"
     implementation 'androidx.test.espresso:espresso-contrib:3.4.0'
+    testImplementation project(path: ':auth')
     kapt "com.google.dagger:dagger-compiler:2.40.5"
 
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
@@ -75,14 +82,14 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.4.0'
     androidTestImplementation 'androidx.test:rules:1.4.0'
 
-    androidTestImplementation "io.mockk:mockk-android:1.12.4"
 
     kaptAndroidTest 'androidx.databinding:databinding-compiler:3.3.2'
 
-    androidTestImplementation "io.mockk:mockk-android:1.9.3"
 
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    testImplementation "android.arch.core:core-testing:1.1.1"
+    testImplementation 'org.mockito:mockito-core:4.0.0'
+    testImplementation 'org.mockito.kotlin:mockito-kotlin:4.0.0'
 
-    debugImplementation "androidx.fragment:fragment-testing:1.4.1"
-    implementation "androidx.fragment:fragment:1.4.1"
 
 }

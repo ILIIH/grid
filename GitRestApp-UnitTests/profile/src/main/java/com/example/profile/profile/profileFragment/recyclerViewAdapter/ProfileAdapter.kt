@@ -66,22 +66,6 @@ class ProfileAdapter :
             it.second = it.first.name.lowercase(Locale.getDefault()).contains(constraint)
         }
         this@ProfileAdapter.notifyDataSetChanged()
-
-        /*val p = 0   val filteredList: ArrayList<Repo> = ArrayList()
-        if (constraint == null || constraint.length == 0) {
-            filteredList.addAll(FullList)
-        } else {
-            val filterPattern =
-                constraint.toString().lowercase(Locale.getDefault()).trim { it <= ' ' }
-            for (item in FullList) {
-
-                if (item.fullName.toLowerCase().contains(filterPattern)) {
-                    filteredList.add(item)
-                }
-            }
-        }
-        val results = Filter.FilterResults()
-        results.values = filteredList*/
     }
 }
 

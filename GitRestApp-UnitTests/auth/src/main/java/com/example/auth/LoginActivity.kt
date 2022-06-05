@@ -18,7 +18,6 @@ import com.example.gitapp.util.asUserNetwork
 import com.example.gitapp.util.hideKeyboard
 import com.example.profile.profile.ProfileActivity
 
-
 class LoginActivity : AppCompatActivity() {
 
     private val viewModel: LoginViewModel by viewModels {
@@ -30,11 +29,13 @@ class LoginActivity : AppCompatActivity() {
 
         val bindidg = FragmentLoginBinding.inflate(layoutInflater)
 
-        bindidg.AuthTokenTextField.setOnFocusChangeListener(OnFocusChangeListener { view, hasFocus ->
-            if (!hasFocus) {
-                bindidg.EnterButton.requestFocus()
+        bindidg.AuthTokenTextField.setOnFocusChangeListener(
+            OnFocusChangeListener { view, hasFocus ->
+                if (!hasFocus) {
+                    bindidg.EnterButton.requestFocus()
+                }
             }
-        })
+        )
 
         bindidg.UserNameTextField.setOnEditorActionListener(
             OnEditorActionListener { _, actionId, _ ->

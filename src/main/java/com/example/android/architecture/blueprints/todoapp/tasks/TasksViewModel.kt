@@ -26,11 +26,11 @@ import com.example.android.architecture.blueprints.todoapp.data.Result.Success
 import com.example.android.architecture.blueprints.todoapp.data.Task
 import com.example.android.architecture.blueprints.todoapp.data.source.DefaultTasksRepository
 import com.example.android.architecture.blueprints.todoapp.data.source.TasksDataSource
+import com.example.android.architecture.blueprints.todoapp.data.source.TasksRepository
 import kotlinx.coroutines.launch
 
-class TasksViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val tasksRepository = DefaultTasksRepository.getRepository(application)
+class TasksViewModel( private val tasksRepository: TasksRepository) : ViewModel() {
 
     private val _forceUpdate = MutableLiveData<Boolean>(false)
 
@@ -89,13 +89,6 @@ class TasksViewModel(application: Application) : AndroidViewModel(application) {
         loadTasks(true)
     }
 
-    /**
-     * Sets the current task filtering type.
-     *
-     * @param requestType Can be [TasksFilterType.ALL_TASKS],
-     * [TasksFilterType.COMPLETED_TASKS], or
-     * [TasksFilterType.ACTIVE_TASKS]
-     */
     fun setFiltering(requestType: TasksFilterType) {
         currentFiltering = requestType
 

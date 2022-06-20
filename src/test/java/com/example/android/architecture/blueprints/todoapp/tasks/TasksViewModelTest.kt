@@ -3,6 +3,7 @@ package com.example.android.architecture.blueprints.todoapp.tasks
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.android.architecture.blueprints.todoapp.FakeData.FakeTestRepository
 import com.example.android.architecture.blueprints.todoapp.getOrAwaitValue
 import org.hamcrest.CoreMatchers.*
 import org.hamcrest.MatcherAssert.assertThat
@@ -14,8 +15,8 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class TasksViewModelTest {
 
-    // Subject under test
     private lateinit var tasksViewModel: TasksViewModel
+    private lateinit var tasksRepository: FakeTestRepository
 
     // Executes each task synchronously using Architecture Components.
     @get:Rule
